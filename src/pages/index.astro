@@ -2,62 +2,68 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
+import createSlug from "../lib/createSlug";
 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
 const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
+    <div class="text-5xl font-bold">I'm Keith Curry</div>
+    <div class="text-3xl py-3 font-bold"> Programmer | Researcher | Maker</div>
     <div class="py-2">
       <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
+        I'm a CS/Bio major, researcher, and maker passionate about 3D printing, programming, and interdisciplinary innovation. 
+        My work blends bioengineering, computer science, and hardware development to create accessible technology for research and education.
       </text>
     </div>
     <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
+      <a class="btn" href="https://linkedin.com/in/keithcurrysf" target="_blank"> Connect on LinkedIn</a>
+      <a href="https://github.com/Keiferton" target="_blank" class="btn btn-outline ml-5">
+        View My GitHub
       </a>
     </div>
   </div>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    <div class="text-3xl w-full font-bold mb-2">My Recent Projects {"</>"}</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
+    title="FlyCam V2"
+    img="/public/flycamv2.webp"
+    desc="An open-source, low-cost imaging system for fruit fly research, built using modified 3D printers. This version replaces the Anycubic i3 Mega S with the more widely available Ender 3, making it easier for other labs to reproduce and maintain."
+    url="https://github.com/raymondWWW/FlyCam"
+    badge="Research"
+  />
+  <HorizontalCard
+    title="StentorCam V2"
+    img="/public/stentorcamv2.webp"
+    desc="An open-source, low-cost laboratory imaging system for single-celled organisms, built using modified 3D printers. Engineered custom infrared lighting pad to image the photosensitive organism"
+    url="https://github.com/Keiferton/StentorCam"
+    badge="Research"
+  />
+  <div class="divider my-0"></div> 
+  <HorizontalCard
+    title="Drosophila Memory Assay"
+    img="/images/drosophila.webp"
+    desc="Designed a flexible PCB to support Alzheimer's research in fruit flies."
+    url="https://github.com/Keiferton/DrosophilaAssay"
+    badge="Research"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
+    title="TheraTutor - Emotionally Intelligent Tutor"
+    img="/public/theratutor.webp"
+    desc="Developed an AI-powered web app to assess and respond to students' emotional states using NLP and sentiment analysis."
+    url="https://github.com/Keiferton/TheraTutor"
+    badge="AI"
   />
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from My Blog</div>
   </div>
 
   {
